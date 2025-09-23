@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Mathebula Attorneys</title>
+  <meta name="description" content="Contact Mathebula Attorneys for consultations and inquiries.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  
+<header>
+  <div class="container nav">
+    <div class="brand"><a href="index.html">Mathebula Attorneys</a></div>
+    <nav class="menu">
+      <a class="" href="index.html">Home</a>
+      <a class="" href="practice-areas.html">Practice Areas</a>
+      <a class="" href="services.html">Services</a>
+      <a class="" href="attorneys.html">Attorneys</a>
+      <a class="" href="about.html">About</a>
+      <a class="active" href="contact.html">Contact Us</a>
+      <a class="btn" href="contact.html">Free Consultation</a>
+    </nav>
+  </div>
+</header>
+
+  
+<main class="container section">
+  <h1>Contact Us</h1>
+  <div class="grid grid-2" style="margin-top:12px">
+    <div class="card form">
+      <h2>Send a Message</h2>
+      <!-- Netlify Forms compatible -->
+      <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="row">
+          <p><label>First name<input name="first" required></label></p>
+          <p><label>Last name<input name="last" required></label></p>
+        </div>
+        <div class="row">
+          <p><label>Email<input name="email" type="email" required></label></p>
+          <p><label>Phone<input name="phone" type="tel"></label></p>
+        </div>
+        <p><label>Message<textarea name="message" required></textarea></label></p>
+        <p><button class="btn" type="submit">Submit</button></p>
+        <p class="small">By submitting, you consent to be contacted about your inquiry.</p>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Details</h2>
+      <p><strong>Email:</strong> <a href="mailto:info@mathebulalaw.example">info@mathebulalaw.example</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+27000000000">+27 00 000 0000</a></p>
+      <p><strong>Address:</strong> Gauteng, South Africa</p>
+      <p><a class="btn secondary" href="https://www.google.com/maps" target="_blank" rel="noopener">Open in Maps</a></p>
+    </div>
+  </div>
+</main>
+
+  
+<footer>
+  <div class="container">
+    <div>&copy; <span id="year"></span> Mathebula Attorneys. All rights reserved.</div>
+    <div class="small">Information on this site is for general purposes and does not constitute legal advice.</div>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</footer>
+
+</body>
+</html>

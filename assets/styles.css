@@ -42,6 +42,73 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdro
   font-size:.85em;
   opacity:.7;
 }
+/* --- Mobile nav toggle (hidden on desktop) --- */
+.nav-toggle{
+  display:none; /* shown in media query */
+  background:transparent;
+  border:0;
+  padding:8px;
+  margin-left:auto;
+  cursor:pointer;
+}
+.nav-toggle .bar{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#111827;
+  margin:5px 0;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+/* Keep desktop as-is */
+@media (max-width: 900px){
+  .nav{padding:12px 0}
+  .menu{gap:22px} /* keep desktop gap override from your base */
+
+  /* show the burger, hide inline menu */
+  .nav-toggle{display:inline-flex; align-items:center; justify-content:center}
+  .menu{
+    position: fixed;
+    left: 0; right: 0; top: var(--hdr-h,64px);
+    background: #fff;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  /* height variable so the panel sits just under the sticky header */
+  header{ --hdr-h: 56px; }
+  .brand{font-size: 1rem}
+  .menu a{
+    padding: 14px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f3f5;
+    color:#111;                 /* stronger on mobile */
+  }
+  .menu a:last-child{ border-bottom: 0; }
+
+  /* when open */
+  header.is-open .menu{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* animate burger to X when open */
+  header.is-open .nav-toggle .bar:nth-child(1){ transform: translateY(7px) rotate(45deg) }
+  header.is-open .nav-toggle .bar:nth-child(2){ opacity: 0 }
+  header.is-open .nav-toggle .bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg) }
+}
+
+/* Prevent the hero "scroll-down" being hidden behind the sticky header on small screens */
+@media (max-width:900px){
+  .scroll-down{ bottom: 16px; }
+}
+
 
 
 /* HERO (split image/text like screenshot) */
